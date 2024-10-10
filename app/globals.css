@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #25324f; /* Dark blue background */
+  --foreground: #ffffff; /* Light foreground for text */
+  --button-bg: #dfd7cf; /* Beige button background */
+  --button-hover-bg: #d1c5ba; /* Hover effect for buttons */
+  --primary-button: #993f3c; /* Red equals button */
+  --reset-button: #263450;  /* Blue reset button */
+  --input-bg: #222839;  /* Dark input background */
+  --delete-button: #3e4f6d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #263450;
+    --foreground: #231d3a;
+  }
+}
+
+/* Global styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Input box */
+input {
+  background-color: var(--input-bg);
+  color: var(--foreground);
+  border: none;
+  padding: 20px;
+  font-size: 2rem;
+  text-align: right;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Calculator buttons */
+button {
+  background-color: var(--button-bg);
+  color: var(--background);
+  border-radius: 8px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* Special button styles */
+button.bg-blue-700 {
+  background-color: var(--reset-button);
+  color: white;
+}
+
+button.bg-red-500 {
+  background-color: var(--primary-button);
+  color: white;
+}
+
+/* Grid Layout */
+.grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem; /* Adjusted gap */
+}
